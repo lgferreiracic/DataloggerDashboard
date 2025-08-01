@@ -1,0 +1,45 @@
+{
+  "name": "web-datalogger",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --fix",
+    "format": "prettier --write src/",
+    "deploy": "npm run build && firebase deploy"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.2.0",
+    "@tanstack/vue-table": "^8.21.3",
+    "@tresjs/cientos": "^4.3.1",
+    "@tresjs/core": "^4.3.6",
+    "chart.js": "^4.5.0",
+    "dayjs": "^1.11.13",
+    "firebase": "^12.0.0",
+    "pinia": "^3.0.3",
+    "three": "^0.178.0",
+    "troisjs": "^0.3.4",
+    "vite-plugin-inspect": "^11.3.0",
+    "vue": "^3.5.17",
+    "vue-chartjs": "^5.3.2",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.29.0",
+    "eslint-plugin-vue": "~10.2.0",
+    "globals": "^16.2.0",
+    "postcss": "^8.5.6",
+    "prettier": "3.5.3",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.0.0",
+    "vite-plugin-vue-devtools": "^7.7.7"
+  }
+}

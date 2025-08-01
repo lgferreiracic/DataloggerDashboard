@@ -1,0 +1,43 @@
+{
+  "rules": {
+    "sensors": {
+      "$sensorId": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.uid == newData.child('userId').val()"
+      }
+    },
+    "users": {
+      "$userId": {
+        ".read": "auth != null && auth.uid == $userId",
+        ".write": "auth != null && auth.uid == $userId"
+      }
+    },
+    "userSettings": {
+      "$userId": {
+        ".read": "auth != null && auth.uid == $userId",
+        ".write": "auth != null && auth.uid == $userId"
+      }
+    },
+    "notifications": {
+      "$userId": {
+        ".read": "auth != null && auth.uid == $userId",
+        ".write": "auth != null && auth.uid == $userId"
+      }
+    },
+    "test": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Dados de sensores - apenas leitura para usuários autenticados
+    match /sensors/{sensorId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+    
+    // Dados de usuários - apenas o próprio usuário pode acessar
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Configurações de usuário - permitir criação, leitura e escrita
+    match /userSettings/{userId} {
+      allow read, write, create: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Notificações de usuário - apenas o próprio usuário pode acessar
+    match /notifications/{notificationId} {
+      allow read, write: if request.auth != null && request.auth.uid == resource.data.userId;
+    }
+    
+    // Coleção de teste - apenas para desenvolvimento
+    match /test/{document} {
+      allow read, write: if request.auth != null;
+    }
+    
+    // Bloquear acesso a outras coleções por padrão
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
+
+
