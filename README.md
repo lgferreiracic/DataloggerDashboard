@@ -1,11 +1,7 @@
 # 🌐 DataLogger IoT - Sistema Completo de Monitoramento
+<p><strong>Sistema integrado com Raspberry Pi Pico W, servidor Python e interface web moderna para monitoramento em tempo real.</strong></p>
 
-<div align="center">
-  <img src="Frontend/src/assets/images/embarcatechLogo.png" alt="EmbarcaTech Logo" width="200"/>
-  
-  <h3>🚀 Plataforma completa de IoT para coleta e visualização de dados de sensores</h3>
-  
-  <p><strong>Sistema integrado com Raspberry Pi Pico W, servidor Python e interface web moderna para monitoramento em tempo real.</strong></p>
+<div align="center"> 
 
   <h3>Acesse a plataforma em:</h3>
   <h2><a href="https://embarcatech-datalogger.web.app" target="_blank">🌐 embarcatech-datalogger.web.app</a></h2>
@@ -50,12 +46,11 @@ graph TB
     A2[Display OLED] --> A
     A3[Botões/LEDs] --> A
     
-    B1[MQTT Client] --> B
     B2[Firebase Auth] --> B
     
-    D1[Dashboard] --> D
-    D2[Gráficos] --> D
-    D3[Alertas] --> D
+    D -->D1[Dashboard]
+    D -->D2[Gráficos]
+    D -->D3[Alertas]
 ```
 
 ## 🚀 Funcionalidades
